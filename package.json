@@ -1,0 +1,51 @@
+{
+  "name": "ideale-status-check",
+  "version": "1.0.0",
+  "description": "Status Check das API's e Painel Idealeware",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "build": "babel src -d dist --source-maps",
+    "watch": "babel src -d dist --source-maps --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagofmleite/ideale-status-check.git"
+  },
+  "keywords": [
+    "idealeware"
+  ],
+  "author": "Thiago Leite",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagofmleite/ideale-status-check/issues"
+  },
+  "homepage": "https://github.com/thiagofmleite/ideale-status-check#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-systemjs": "^6.9.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.11",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-csslint": "^1.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-usemin": "^0.3.28",
+    "gulp-useref": "^3.1.2",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1"
+  },
+  "dependencies": {
+    "systemjs": "^0.20.12"
+  }
+}

@@ -5,12 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -59,137 +55,14 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.1/jquery.xdomainrequest.min.js"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- build:js system.min.js -->
+    <script src="../node_modules/systemjs/dist/system.js"></script>
+    <!-- endbuild -->
     <script>
-        var contentType ="application/x-www-form-urlencoded; charset=utf-8";
-        if(window.XDomainRequest) //for IE8,IE9
-            contentType = "text/plain";
-
-        var core_apis = [];
-        var public_apis = [];
-
-        public_apis.push({'id': 'API_AUTHENTICATE', url:'https://api-pub-authenticate.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_BANNER', url:'https://api-pub-banner.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_BRANCH', url:'https://api-pub-branch.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_BRAND', url:'https://api-pub-brand.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_BUDGET', url:'https://api-pub-budget.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_CART', url:'https://api-pub-cart.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_CARTSHOWCASE', url:'https://api-pub-cartshowcase.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_CATEGORY', url:'https://api-pub-category.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_CONTACT', url:'https://api-pub-contact.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_CUSTOMER', url:'https://api-pub-customer.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_DNEADDRESS', url:'https://api-pub-dneaddress.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_GOOGLE', url:'https://api-pub-google.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_GROUP', url:'https://api-pub-group.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_INSTITUTIONAL', url:'https://api-pub-institutional.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_INTELIPOST', url:'https://api-pub-Intelipost.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_ORDER', url:'https://api-pub-order.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_ORDERVALIDATION', url:'https://api-pub-ordervalidation.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_PAYMENTS', url:'https://api-pub-payments.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_POPUP', url:'https://api-pub-popup.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_PRODUCT', url:'https://api-pub-product.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_PRODUCTAWAITED', url:'https://api-pub-productsawaited.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_PRODUCTRATING', url:'https://api-pub-productrating.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_SEARCH', url:'https://api-pub-search.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_SERVICE', url:'https://api-pub-service.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_SHOWCASE', url:'https://api-pub-showcase.idealeware.com.br:10000', status: false});
-        public_apis.push({'id': 'API_STORE', url:'https://api-pub-store.idealeware.com.br:10000', status: false});
-
-        core_apis.push({'id':'API_ADMINISTRATOR', url:'https://api-adm-administrator.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_AUTHENTICATE', url:'https://api-adm-authenticate.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_BANNER', url:'https://api-adm-banner.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_BRANCH', url:'https://api-adm-branch.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_BRAND', url:'https://api-adm-brand.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_BUDGET', url:'https://api-adm-budget.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_CATEGORY', url:'https://api-adm-category.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_CARTSHOWCASE', url:'https://api-adm-cartshowcase.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_CONTACT', url:'https://api-adm-contact.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_COUPON', url:'https://api-adm-coupon.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_CUSTOMER', url:'https://api-adm-customer.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_CUSTOMEMAIL', url:'https://api-adm-customemail.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_DASHBOARD', url:'https://api-adm-dashboard.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_GOOGLE', url:'https://api-adm-google.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_GROUP', url:'https://api-adm-group.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_INSTITUTIONAL', url:'https://api-adm-institutional.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_INTELIPOST', url:'https://api-adm-intelipost.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_ORDER', url:'https://api-adm-order.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_PAYMENTSGATEWAY', url:'https://api-adm-paymentsgateway.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_POPUP', url:'https://api-adm-popup.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_PRODUCTAWAITED', url:'https://api-adm-productsawaited.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_PRODUCTRATING', url:'https://api-adm-productrating.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_PRODUCT', url:'https://api-adm-product.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_SERVICE', url:'https://api-adm-service.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_SHOWCASE', url:'https://api-adm-showcase.idealeware.com.br:10000', status: false});
-        
-        core_apis.push({'id':'API_STORE', url:'https://api-adm-store.idealeware.com.br:10000', status: false});
-        core_apis.push({'id':'API_VARIATION', url:'https://api-adm-variation.idealeware.com.br:10000', status: false});
-
-
-        function checkApis(arr, container, status){
-
-            arr.forEach(function(api){
-
-                $.ajax({
-                    type: 'HEAD',
-                    url: api.url + '/swagger/ui/index.html',
-                    dataType: 'text/plain',
-                }).done(function(response, status, xhr){
-                    var li = document.createElement('li');
-                    li.className = 'list-group-item';
-                    li.innerHTML = '<span class="text-success glyphicon glyphicon-ok"></span> <a href="'+ api.url +'/swagger/ui/" target="_blank">' + api.id.toUpperCase() + '</a>';
-                    document.querySelector(container + ' .online').appendChild(li);
-                    
-                    arr.map(a => {
-                        if(a.id == api.id)
-                            a.status = true;
-                    });
-
-                    
-
-                }).fail(function(response, xhr) {
-                    var li = document.createElement('li');
-                    li.className = 'list-group-item bg-danger';
-                    li.innerHTML = '<span class="text-danger glyphicon glyphicon-remove"></span> <a href="'+ api.url +'/swagger/ui/" target="_blank">' + api.id.toUpperCase() + '</a>';
-                    document.querySelector(container + ' .offline').appendChild(li);
-                    arr.map(a => {
-                        if(a.id == api.id)
-                            a.status = false;
-                    });
-                }).always(function(){
-                    let health = 0;
-                    let online = arr.filter(a => a.status == true).length;
-                    let offline = arr.filter(a => a.status == false).length;
-
-                    if(online == 0){
-                        health = 0;
-                    }
-                    else{
-                        health = (online / arr.length) * 100 
-                    }
-
-                    $(container + ' .title-offline .badge').text(offline);
-                    $(container + ' .title-online .badge').text(online);
-                    
-                    
-                    $(container + ' .progress-bar')
-                        .text(health.toFixed(1) + '%')
-                        .attr('aria-valuenow', Math.round(health))
-                        .css('width', health + '%');
-
-                    
-                });
-                
-            });
-        }
-
-
-        $(document).ready(function(){
-            jQuery.support.cors = true;
-            
-            checkApis(public_apis, '#public');
-            checkApis(core_apis, '#core')
-
-        })
+        System.import('app/main.js').catch(function(err){
+            console.log(err);
+        });
     </script>
 </body>
 
