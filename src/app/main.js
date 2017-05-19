@@ -8,6 +8,7 @@ var public_apis = [];
 function loadApis(url){
     return new Promise((resolve, reject) => {
         $.getJSON(url, function(data){
+            console.log(data);
             resolve(data);
         });
     });

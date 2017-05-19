@@ -65,7 +65,7 @@ gulp.task('server', ['copy', 'build'], function(){
         gulp.start('build');
     });
 
-    gulp.watch('dist/**/*.js').on('change', function(event){
+    gulp.watch(['dist/**/*.js', '!dist/system.min.js']).on('change', function(event){
         gulp.src(event.path)
         .pipe(jshint())
         .pipe(jshint.reporter(jshintStylish))
