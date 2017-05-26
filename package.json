@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "gulp": "gulp",
     "build": "babel src -d dist --source-maps",
-    "watch": "babel src -d dist --source-maps --watch"
+    "watch": "babel src -d dist --source-maps --watch",
+    "server": "light-server -s dist"
   },
   "repository": {
     "type": "git",
@@ -46,6 +47,8 @@
     "jshint-stylish": "^2.2.1"
   },
   "dependencies": {
-    "systemjs": "^0.20.12"
+    "jquery": "^3.2.1",
+    "systemjs": "^0.20.12",
+    "tether": "^1.4.0"
   }
 }

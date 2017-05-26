@@ -29,20 +29,28 @@ function checkApis(arr, container, status){
             url: api.url + '/swagger/ui/index.html',
             dataType: 'text/plain',
         }).done(function(response, status, xhr){
-            var li = document.createElement('li');
-            li.className = 'list-group-item';
-            li.innerHTML = '<span class="text-success glyphicon glyphicon-ok"></span> <a href="'+ api.url +'/swagger/ui/" target="_blank">' + api.id.toUpperCase() + '</a>';
-            document.querySelector(container + ' .online').appendChild(li);
+            var row = document.createElement('tr');
+            row.className = '';
+            row.innerHTML = `
+                <td class="text-success">Online</td>
+                <td>${api.id.toUpperCase()}</td>
+                <td><a href="${api.url}/swagger/ui/" target="_blank">${api.url}</a></td>
+            `;
+            document.querySelector(container + ' table tbody').appendChild(row);
             arr.map(a => {
                 if(a.id == api.id)
                     a.status = true;
             });
 
         }).fail(function(response, xhr) {
-            var li = document.createElement('li');
-            li.className = 'list-group-item bg-danger';
-            li.innerHTML = '<span class="text-danger glyphicon glyphicon-remove"></span> <a href="'+ api.url +'/swagger/ui/" target="_blank">' + api.id.toUpperCase() + '</a>';
-            document.querySelector(container + ' .offline').appendChild(li);
+            var row = document.createElement('tr');
+            row.className = 'table-danger';
+            row.innerHTML = `
+                <td>Offline</td>
+                <td>${api.id.toUpperCase()}</td>
+                <td><a href="${api.url}/swagger/ui/" target="_blank">${api.url}</a></td>
+            `;
+            document.querySelector(container + ' table tbody').appendChild(li);
             arr.map(a => {
                 if(a.id == api.id)
                     a.status = false;
