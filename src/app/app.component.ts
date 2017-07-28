@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Endpoint } from "./models/endpoint";
+import { Website } from "./models/website";
 import { HttpClient } from "./helpers/httpclient";
 
 declare var swal: any;
@@ -13,8 +13,9 @@ declare var $: any;
 })
 export class AppComponent implements OnInit{
   title = 'app works!';
-  publicEndpoints: Endpoint[] = [];
-  coreEndpoints: Endpoint[] = [];
+  publicEndpoints: Website[] = [];
+  coreEndpoints: Website[] = [];
+  sites: Website[] = [];
 
   constructor(private client: HttpClient){
   }
@@ -50,7 +51,7 @@ export class AppComponent implements OnInit{
   }
 
 
-  check(endpoints: Endpoint[]){
+  check(endpoints: Website[]){
     endpoints.forEach(api => {
       this.checkStatus(api)
       .then(response => api.status = response.status)
@@ -61,13 +62,9 @@ export class AppComponent implements OnInit{
     });
   }
 
-  getCompleteUrl(url: string): string{
-    return `${url}/swagger/ui/index.html`;
-  }
-
-  checkStatus(endpoint: Endpoint): Promise<Endpoint>{
+  checkStatus(endpoint: Website): Promise<Website>{
     return new Promise((resolve, reject) => {
-      this.client.head(this.getCompleteUrl(endpoint.url))
+      this.client.get(endpoint.url)
       .subscribe(response => {
         endpoint.status = true;
         resolve(endpoint);
@@ -95,14 +92,20 @@ export class AppComponent implements OnInit{
       this.coreEndpoints = apis;
       return this.check(this.coreEndpoints);
     });
+
+    this.getApis('assets/jsons/sites.json')
+    .then(apis => {
+      this.sites = apis;
+      return this.check(this.sites);
+    });
   }
 
-  getApis(path: string): Promise<Endpoint[]>{
+  getApis(path: string): Promise<Website[]>{
     return new Promise((resolve, reject) => {
       this.client.get(path)
       .map(res => res.json())
       .subscribe(response => {
-        let apis: Endpoint[] = response.map(api => new Endpoint(api.name, api.url))
+        let apis: Website[] = response.map(api => new Website(api.name, api.url))
         resolve(apis);
       }, error => {
         swal(`Erro ${error.status}`, `Não foi possível ler o arquivo ${path}`, 'error');

@@ -1,9 +1,9 @@
 <div class="card">
     <div class="card-content">
         <span class="card-title">{{ title }}</span>
-        <p><strong>Total de API's:</strong> {{ totalApis(endpoints) }}</p>
-        <p><strong>API's Online:</strong> {{ liveApis(endpoints) }}</p>
-        <p><strong>API's Offline:</strong> {{ deadApis(endpoints) }}</p>
+        <p><strong>Total:</strong> {{ totalApis(endpoints) }}</p>
+        <p><strong>Online:</strong> {{ liveApis(endpoints) }}</p>
+        <p><strong>Offline:</strong> {{ deadApis(endpoints) }}</p>
         <p>
             <span *ngIf="waitingApis(endpoints) > 0"><strong>API's em espera:</strong> {{ waitingApis(endpoints) }}</span>
         </p>

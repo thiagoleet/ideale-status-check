@@ -1,4 +1,4 @@
-import { Http } from "@angular/http";
+import { Http, Headers } from "@angular/http";
 import { Injectable } from "@angular/core";
 
 @Injectable()
@@ -10,6 +10,10 @@ export class HttpClient {
     }
 
     get(url: string){
-        return this.http.get(url);
+        let headers = new Headers();
+        headers.append('Access-Control-Allow-Origin', '*');
+        return this.http.get(url, {
+            headers: headers
+        });
     }
 }

@@ -1,4 +1,4 @@
-export class Endpoint{
+export class Website{
     url: string;
     name: string;
     status: boolean;
