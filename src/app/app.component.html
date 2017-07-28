@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col s6">
-      <panel-status [endpoints]="publicEndpoints" [title]="'Public'"></panel-status>
+      <panel-status *ngIf="publicEndpoints" [endpoints]="publicEndpoints" [title]="'Public'"></panel-status>
     </div>
     <div class="col s6">
-      <panel-status [endpoints]="coreEndpoints" [title]="'Core'"></panel-status>
+      <panel-status *ngIf="coreEndpoints" [endpoints]="coreEndpoints" [title]="'Core'"></panel-status>
     </div>
   </div>
     <div class="row">
@@ -15,10 +15,10 @@
       </ul>
     </div>
     <div id="test1" class="col s12">
-      <list-status [endpoints]="publicEndpoints" title="'Public'"></list-status>
+      <list-status *ngIf="publicEndpoints" [endpoints]="publicEndpoints" [title]="'Public'"></list-status>
     </div>
     <div id="test2" class="col s12">
-      <list-status [endpoints]="coreEndpoints" title="'Core'"></list-status>
+      <list-status *ngIf="coreEndpoints" [endpoints]="coreEndpoints" [title]="'Core'"></list-status>
     </div>
   </div>
 </div>

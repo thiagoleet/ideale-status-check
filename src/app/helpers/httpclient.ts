@@ -8,4 +8,8 @@ export class HttpClient {
     head(url: string){
         return this.http.head(url);
     }
+
+    get(url: string){
+        return this.http.get(url);
+    }
 }

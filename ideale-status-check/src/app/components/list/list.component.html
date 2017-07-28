@@ -1,9 +1,0 @@
-<ul class="collection with-header">
-    <li class="collection-header"><h4>Public API's</h4></li>
-    <li class="collection-item avatar" *ngFor="let endpoint of endpoints">
-        <i class="material-icons circle z-depth-2" [ngClass]="{'red': endpoint.status == false, 'green': endpoint.status == true, 'blue lighten-3': endpoint.status == null}">{{ (endpoint.status) ? 'check': (endpoint.status == null) ? 'query_builder' : 'close' }}</i>
-        <span class="title">{{ endpoint.name }}</span>
-        <p>Status: {{ (endpoint.status) ? 'Online': 'Offline' }}</p>
-        <a [attr.href]="getCompleteUrl(endpoint.url)" target="_blank" class="secondary-content" title="Ir para URL"><i class="material-icons">insert_link</i></a>
-    </li>
-</ul>

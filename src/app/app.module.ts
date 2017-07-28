@@ -7,17 +7,21 @@ import { AppComponent } from './app.component';
 import { HttpClient } from "./helpers/httpclient";
 import { PanelModule } from "./components/panel/panel.module";
 import { ListModule } from "./components/list/list.module";
+import { MaterializeModule } from "angular2-materialize";
+
+import 'rxjs/Rx';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     PanelModule,
-    ListModule
+    ListModule,
+    MaterializeModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
