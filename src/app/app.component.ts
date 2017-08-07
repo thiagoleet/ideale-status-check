@@ -16,6 +16,7 @@ export class AppComponent implements OnInit{
   publicEndpoints: Website[] = [];
   coreEndpoints: Website[] = [];
   sites: Website[] = [];
+  stageEndpoints: Website[] = []
 
   constructor(private client: HttpClient){
   }
@@ -93,11 +94,17 @@ export class AppComponent implements OnInit{
       return this.check(this.coreEndpoints);
     });
 
-    this.getApis('assets/jsons/sites.json')
+    this.getApis('assets/jsons/stage.json')
     .then(apis => {
-      this.sites = apis;
-      return this.check(this.sites);
+      this.stageEndpoints = apis;
+      return this.check(this.stageEndpoints);
     });
+
+    // this.getApis('assets/jsons/sites.json')
+    // .then(apis => {
+    //   this.sites = apis;
+    //   return this.check(this.sites);
+    // });
   }
 
   getApis(path: string): Promise<Website[]>{

@@ -7,7 +7,7 @@
       <panel-status *ngIf="coreEndpoints" [endpoints]="coreEndpoints" [title]="'Core'"></panel-status>
     </div>
     <div class="col s4">
-      <panel-status *ngIf="sites" [endpoints]="sites" [title]="'Sites'"></panel-status>
+      <panel-status *ngIf="stageEndpoints" [endpoints]="stageEndpoints" [title]="'Stage'"></panel-status>
     </div>
   </div>
     <div class="row">
@@ -15,7 +15,7 @@
       <ul class="tabs">
         <li class="tab col s3"><a class="active" href="#test1">Public API's</a></li>
         <li class="tab col s3"><a  href="#test2">Core API's</a></li>
-        <li class="tab col s3"><a  href="#test3">Websites</a></li>
+        <li class="tab col s3"><a  href="#test3">Stage</a></li>
         
       </ul>
     </div>
@@ -26,7 +26,7 @@
       <list-status *ngIf="coreEndpoints" [endpoints]="coreEndpoints" [title]="'Core'"></list-status>
     </div>
     <div id="test3" class="col s12">
-      <list-status *ngIf="sites" [endpoints]="sites" [title]="'Websites'"></list-status>
+      <list-status *ngIf="stageEndpoints" [endpoints]="stageEndpoints" [title]="'Stage'"></list-status>
     </div>
   </div>
 </div>
