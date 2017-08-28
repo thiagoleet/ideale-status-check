@@ -94,6 +94,38 @@
             { "name": "API_SHOWCASE", "url": "https://api-pub-showcase-stage.idealeware.com.br:10000/swagger/ui/index.html"},
             { "name": "API_STORE", "url": "https://api-pub-store-stage.idealeware.com.br:10000/swagger/ui/index.html"}
         ]
+    },
+    {
+        "name": "Public Homolog API's",
+        "websites": [
+            { "name": "API_AUTHENTICATE", "url": "https://api-pub-authenticate.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_BANNER", "url": "https://api-pub-banner.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_BRANCH", "url": "https://api-pub-branch.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_BRAND", "url": "https://api-pub-brand.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_BUDGET", "url": "https://api-pub-budget.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_CART", "url": "https://api-pub-cart.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_CARTSHOWCASE", "url": "https://api-pub-cartshowcase.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_CATEGORY", "url": "https://api-pub-category.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_CONTACT", "url": "https://api-pub-contact.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_COUPON", "url": "https://api-pub-coupon.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_CUSTOMER", "url": "https://api-pub-customer.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_DNEADDRESS", "url": "https://api-pub-dneaddress.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_GOOGLE", "url": "https://api-pub-google.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_GROUP", "url": "https://api-pub-group.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_INSTITUTIONAL", "url": "https://api-pub-institutional.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_INTELIPOST", "url": "https://api-pub-intelipost.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_ORDER", "url": "https://api-pub-order.hmg.idealeware.com.br:10000/swagger/ui/index.html"}, 
+            { "name": "API_ORDERVALIDATION", "url": "https://api-pub-ordervalidation.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_PAYMENTS", "url": "https://api-pub-payments.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_POPUP", "url": "https://api-pub-popup.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_PRODUCT", "url": "https://api-pub-product.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_PRODUCTAWAITED", "url": "https://api-pub-productsawaited.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_PRODUCTRATING", "url": "https://api-pub-productrating.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_SEARCH", "url": "https://api-pub-search.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_SERVICE", "url": "https://api-pub-service.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_SHOWCASE", "url": "https://api-pub-showcase.hmg.idealeware.com.br:10000/swagger/ui/index.html"},
+            { "name": "API_STORE", "url": "https://api-pub-store.hmg.idealeware.com.br:10000/swagger/ui/index.html"}
+        ]
     }
 
 ]
