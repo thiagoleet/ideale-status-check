@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Website } from "./models/website";
 import { HttpClient } from "./helpers/httpclient";
+import { Enviroment } from "app/models/enviroment";
 
 declare var swal: any;
 declare var toastr: any;
@@ -12,11 +13,7 @@ declare var $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'app works!';
-  publicEndpoints: Website[] = [];
-  coreEndpoints: Website[] = [];
-  sites: Website[] = [];
-  stageEndpoints: Website[] = []
+  enviroments: Enviroment[] = []
 
   constructor(private client: HttpClient){
   }
@@ -82,38 +79,26 @@ export class AppComponent implements OnInit{
     if(event)
       event.preventDefault();
 
-    this.getApis('assets/jsons/public.json')
-    .then(apis => {
-      this.publicEndpoints = apis;
-      return this.check(this.publicEndpoints);
-    });
+    this.getApis('assets/services/enviroments.json')
+    .then(response => {
+      this.enviroments = response.map(e => e = new Enviroment(e.name, e.websites));
 
-    this.getApis('assets/jsons/core.json')
-    .then(apis => {
-      this.coreEndpoints = apis;
-      return this.check(this.coreEndpoints);
+      this.enviroments.forEach(e => {
+        this.check(e.websites);
+      });
     });
-
-    this.getApis('assets/jsons/stage.json')
-    .then(apis => {
-      this.stageEndpoints = apis;
-      return this.check(this.stageEndpoints);
-    });
-
-    // this.getApis('assets/jsons/sites.json')
-    // .then(apis => {
-    //   this.sites = apis;
-    //   return this.check(this.sites);
-    // });
   }
 
-  getApis(path: string): Promise<Website[]>{
+  getApis(path: string): Promise<Enviroment[]>{
     return new Promise((resolve, reject) => {
       this.client.get(path)
       .map(res => res.json())
       .subscribe(response => {
-        let apis: Website[] = response.map(api => new Website(api.name, api.url))
-        resolve(apis);
+        response.forEach(element => {
+          element.websites = element.websites.map(api => new Website(api.name, api.url))
+        });
+
+        resolve(response);
       }, error => {
         swal(`Erro ${error.status}`, `Não foi possível ler o arquivo ${path}`, 'error');
         reject(error);

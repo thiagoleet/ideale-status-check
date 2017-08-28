@@ -1,6 +1,6 @@
 {
   "name": "ideale-status-check",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -30,8 +30,8 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.5",
-    "@angular/compiler-cli": "^4.0.0",
+    "@angular/cli": "1.2.4",
+    "@angular/compiler-cli": "^4.2.4",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",

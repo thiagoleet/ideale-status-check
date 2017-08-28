@@ -1,33 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col s4">
-      <panel-status *ngIf="publicEndpoints" [endpoints]="publicEndpoints" [title]="'Public'"></panel-status>
-    </div>
-    <div class="col s4">
-      <panel-status *ngIf="coreEndpoints" [endpoints]="coreEndpoints" [title]="'Core'"></panel-status>
-    </div>
-    <div class="col s4">
-      <panel-status *ngIf="stageEndpoints" [endpoints]="stageEndpoints" [title]="'Stage'"></panel-status>
+    <div class="col s4" *ngFor="let enviroment of enviroments">
+      <panel-status [endpoints]="enviroment.websites" [title]="enviroment.name"></panel-status>
     </div>
   </div>
     <div class="row">
     <div class="col s12">
       <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#test1">Public API's</a></li>
-        <li class="tab col s3"><a  href="#test2">Core API's</a></li>
-        <li class="tab col s3"><a  href="#test3">Stage</a></li>
+        <li class="tab col s3" *ngFor="let enviroment of enviroments; let i=index"><a [ngClass]="{'active': i == 0}" [attr.href]="'#tab-' + i">{{enviroment.name}}</a></li>
         
       </ul>
     </div>
-    <div id="test1" class="col s12">
-      <list-status *ngIf="publicEndpoints" [endpoints]="publicEndpoints" [title]="'Public'"></list-status>
+    <div *ngFor="let enviroment of enviroments; let i=index" [attr.id]="'tab-' +i" class="col s12">
+      <list-status [endpoints]="enviroment.websites" [title]="enviroment.name"></list-status>
     </div>
-    <div id="test2" class="col s12">
-      <list-status *ngIf="coreEndpoints" [endpoints]="coreEndpoints" [title]="'Core'"></list-status>
-    </div>
-    <div id="test3" class="col s12">
-      <list-status *ngIf="stageEndpoints" [endpoints]="stageEndpoints" [title]="'Stage'"></list-status>
-    </div>
+    
   </div>
 </div>
 
