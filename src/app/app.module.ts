@@ -10,6 +10,7 @@ import { ListModule } from "./components/list/list.module";
 import { MaterializeModule } from "angular2-materialize";
 
 import 'rxjs/Rx';
+import { WebsiteManager } from "app/manager/website-manager";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import 'rxjs/Rx';
     ListModule,
     MaterializeModule
   ],
-  providers: [HttpClient],
+  providers: [HttpClient, WebsiteManager],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

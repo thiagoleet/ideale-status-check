@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Website } from "./models/website";
 import { HttpClient } from "./helpers/httpclient";
 import { Enviroment } from "app/models/enviroment";
+import { WebsiteManager } from "app/manager/website-manager";
 
 declare var swal: any;
 declare var toastr: any;
@@ -15,8 +16,7 @@ declare var $: any;
 export class AppComponent implements OnInit{
   enviroments: Enviroment[] = []
 
-  constructor(private client: HttpClient){
-  }
+  constructor(private client: HttpClient, private manager: WebsiteManager){}
 
   ngOnInit() {
     this.reload(null);
@@ -84,7 +84,7 @@ export class AppComponent implements OnInit{
 
     this.getApis('assets/services/enviroments.json')
     .then(response => {
-      this.enviroments = response.map(e => e = new Enviroment(e.name, e.websites));
+      this.enviroments = response.map(e => e = new Enviroment(e.id, e.name, e.websites));
 
       this.enviroments.forEach(e => {
         this.check(e.websites);
@@ -110,4 +110,23 @@ export class AppComponent implements OnInit{
   }
 
 
+  getHealthColor(websites: Website[]): string{
+    if(this.manager.waitingApis(websites) > 0)
+      return null
+    else if(this.manager.calcHealth(websites) == 100)
+      return 'green-text'
+    else if(this.manager.calcHealth(websites) > 50 && this.manager.calcHealth(websites) < 100)
+      return 'orange-text';
+    else return 'red-text text-accent-4';
+  }
+
+  getHealthIcon(websites: Website[]): string{
+    if(this.manager.waitingApis(websites) > 0)
+      return 'watch_later'
+    else if(this.manager.calcHealth(websites) == 100)
+      return 'thumb_up'
+    else if(this.manager.calcHealth(websites) > 50 && this.manager.calcHealth(websites) < 100)
+      return 'warning';
+    else return 'thumb_down';
+  }
 }

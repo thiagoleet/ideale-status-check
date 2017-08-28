@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Website } from "app/models/website";
+import { WebsiteManager } from "app/manager/website-manager";
 
 @Component({
     moduleId: module.id,
@@ -10,47 +11,46 @@ export class PanelComponent implements OnInit {
     @Input() endpoints: Website[] = [];
     @Input() title: string;
     
-    constructor() { }
+    constructor(private manager: WebsiteManager) { }
 
     ngOnInit() { }
 
     totalApis(apis: Website[]): number{
-        return apis.length;
+        return this.manager.totalApis(apis);
     }
 
     liveApis(apis: Website[]): number{
-        return apis.filter(a => a.status == true).length;
+        return this.manager.liveApis(apis);
     }
 
     deadApis(apis: Website[]): number{
-        return apis.filter(a => a.status == false).length;
+        return this.manager.deadApis(apis);
     }
 
     waitingApis(apis: Website[]): number{
-        return apis.filter(a => a.status == null).length;
+        return this.manager.waitingApis(apis);
     }
 
     calcHealth(apis: Website[]): number{
-        let total = this.totalApis(apis);
-        let live = this.liveApis(apis);
-        
-        return (live / total) * 100;
+        return this.manager.calcHealth(apis);
     }
 
     getHealth(apis: Website[]): string{
-        return `${this.calcHealth(apis).toFixed(1)}%`;
+        return this.manager.getHealth(apis);
     }
 
     warningClass(): string{
-        if(this.calcHealth(this.endpoints) == 100 || this.waitingApis(this.endpoints) >= (this.totalApis(this.endpoints) / 2))
+        if(this.calcHealth(this.endpoints) == 100)
+            return 'green';
+        else if(this.waitingApis(this.endpoints) > 0)
             return null;
-        else if(this.calcHealth(this.endpoints) < 100)
+        else if(this.calcHealth(this.endpoints) < 100 && this.calcHealth(this.endpoints) > 90)
             return 'yellow lighten-1';
-        else if(this.calcHealth(this.endpoints) <= 90)
+        else if(this.calcHealth(this.endpoints) <= 90 && this.calcHealth(this.endpoints) > 70)
             return 'orange lighten-1';
-        else if(this.calcHealth(this.endpoints) <= 70)
+        else if(this.calcHealth(this.endpoints) <= 70 && this.calcHealth(this.endpoints) > 50)
             return 'orange darken-2';
-        else if(this.calcHealth(this.endpoints) <= 50)
+        else if(this.calcHealth(this.endpoints) <= 50 && this.calcHealth(this.endpoints) > 30)
             return 'orange darken-4';
         else
             return 'red darken-3';
