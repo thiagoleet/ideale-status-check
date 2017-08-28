@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card-content">
+    <div class="card-content" [ngClass]="warningClass()">
         <span class="card-title">{{ title }}</span>
         <p><strong>Total:</strong> {{ totalApis(endpoints) }}</p>
         <p><strong>Online:</strong> {{ liveApis(endpoints) }}</p>

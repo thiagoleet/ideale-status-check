@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col s4" *ngFor="let enviroment of enviroments">
+    <div class="col m4 s12" *ngFor="let enviroment of enviroments">
       <panel-status [endpoints]="enviroment.websites" [title]="enviroment.name"></panel-status>
     </div>
   </div>
@@ -11,7 +11,7 @@
         
       </ul>
     </div>
-    <div *ngFor="let enviroment of enviroments; let i=index" [attr.id]="'tab-' +i" class="col s12">
+    <div *ngFor="let enviroment of enviroments; let i=index" [attr.id]="'tab-' + i" class="col s12">
       <list-status [endpoints]="enviroment.websites" [title]="enviroment.name"></list-status>
     </div>
     

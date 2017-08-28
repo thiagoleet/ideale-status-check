@@ -62,12 +62,15 @@ export class AppComponent implements OnInit{
 
   checkStatus(endpoint: Website): Promise<Website>{
     return new Promise((resolve, reject) => {
+      endpoint.startRequest = new Date();
       this.client.get(endpoint.url)
       .subscribe(response => {
         endpoint.status = true;
+        endpoint.endRequest = new Date();
         resolve(endpoint);
       }, error => {
         endpoint.status = false;
+        endpoint.endRequest = new Date();
         reject(error);
       })
       

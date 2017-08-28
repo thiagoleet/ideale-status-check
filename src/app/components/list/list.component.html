@@ -21,6 +21,7 @@
         <i class="material-icons circle z-depth-2" [ngClass]="{'red': endpoint.status == false, 'green': endpoint.status == true, 'blue lighten-3': endpoint.status == null}">{{ (endpoint.status) ? 'check': (endpoint.status == null) ? 'query_builder' : 'close' }}</i>
         <span class="title">{{ endpoint.name }}</span>
         <p>Status: {{ (endpoint.status) ? 'Online': (endpoint.status == false) ? 'Offline' : 'Aguardando' }}</p>
+        <p>Tempo de resposta: {{endpoint.getInterval()}}s</p>
         <a [attr.href]="endpoint.url" target="_blank" class="secondary-content" title="Ir para URL"><i class="material-icons">insert_link</i></a>
     </li>
 </ul>
