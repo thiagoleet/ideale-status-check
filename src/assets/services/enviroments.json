@@ -207,10 +207,12 @@
             { "name": "b2b-api-pub-authenticate.hmg", "url": "https://b2b-api-pub-authenticate.hmg.idealeware.com.br/docs/index.html"},
             { "name": "b2b-api-pub-brand.hmg", "url": "https://b2b-api-pub-brand.hmg.idealeware.com.br/docs/index.html"},
             { "name": "b2b-api-pub-cart.hmg", "url": "https://b2b-api-pub-cart.hmg.idealeware.com.br/docs/index.html"},
+            { "name": "b2b-api-pub-category.hmg", "url": "https://b2b-api-pub-category.hmg.idealeware.com.br/docs/index.html"},
             { "name": "b2b-api-pub-customer.hmg", "url": "https://b2b-api-pub-customer.hmg.idealeware.com.br/docs/index.html"},
             { "name": "b2b-api-pub-order.hmg", "url": "https://b2b-api-pub-order.hmg.idealeware.com.br/docs/index.html"},
             { "name": "b2b-api-pub-payments.hmg", "url": "https://b2b-api-pub-payments.hmg.idealeware.com.br/docs/index.html"},
-            { "name": "b2b-api-pub-product.hmg", "url": "https://b2b-api-pub-product.hmg.idealeware.com.br/docs/index.html"}
+            { "name": "b2b-api-pub-product.hmg", "url": "https://b2b-api-pub-product.hmg.idealeware.com.br/docs/index.html"},
+            { "name": "b2b-api-pub-shipping.hmg", "url": "https://b2b-api-pub-shipping.hmg.idealeware.com.br/docs/index.html"}
         ]
     }
 ]
