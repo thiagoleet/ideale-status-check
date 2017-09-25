@@ -1,20 +1,3 @@
-<div class="row">
-    <div class="input-field col s6">
-        <input id="search" [(ngModel)]="search" type="text" placeholder="Informe o nome ou URL da API">
-        <label for="search">Filtrar</label>
-    </div>
-    <div class="input-field col s6">
-        <select [(ngModel)]="filter" materialize="material_select">
-            <option [value]="" disabled selected>Escolha uma opção</option>
-            <option [value]="0">Todos</option>
-            <option [value]="1">Online</option>
-            <option [value]="2">Offline</option>
-            <option [value]="3">Aguardando</option>
-        </select>
-        <label>Status</label>
-  </div>
-</div>
-
 <ul class="collection with-header">
     <li class="collection-header"><h4>{{title}}</h4></li>
     <li class="collection-item avatar" *ngFor="let endpoint of filteredEndpoints()">

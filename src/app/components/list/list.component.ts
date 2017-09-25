@@ -11,8 +11,8 @@ export class ListComponent implements OnInit {
     @Input() endpoints: Website[]
     @Input() title: string;
 
-    search: string;
-    filter: ApiStatusEnum = ApiStatusEnum.Todos;
+    @Input() search: string;
+    @Input() filter: ApiStatusEnum = ApiStatusEnum.Todos;
 
     constructor() { }
 
@@ -28,5 +28,9 @@ export class ListComponent implements OnInit {
             filtered = filtered.filter(api => api.name.toLowerCase().includes(this.search.toLowerCase()));
 
         return filtered;
+    }
+
+    getLength(): number{
+        return this.filteredEndpoints().length;
     }
 }

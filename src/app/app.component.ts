@@ -3,6 +3,7 @@ import { Website } from "./models/website";
 import { HttpClient } from "./helpers/httpclient";
 import { Enviroment } from "app/models/enviroment";
 import { WebsiteManager } from "app/manager/website-manager";
+import { ApiStatusEnum } from 'app/enums/api-status.enum';
 
 declare var swal: any;
 declare var toastr: any;
@@ -15,6 +16,9 @@ declare var $: any;
 })
 export class AppComponent implements OnInit{
   enviroments: Enviroment[] = []
+
+  search: string;
+  filter: ApiStatusEnum = ApiStatusEnum.Todos;
 
   constructor(private client: HttpClient, private manager: WebsiteManager){}
 
