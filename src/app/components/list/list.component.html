@@ -5,6 +5,7 @@
         <span class="title">{{ endpoint.name }}</span>
         <p>Status: {{ (endpoint.status) ? 'Online': (endpoint.status == false) ? 'Offline' : 'Aguardando' }}</p>
         <p>Tempo de resposta: {{endpoint.getInterval()}}s</p>
+        <p>Resposta: {{endpoint.statusCode}} | {{endpoint.statusText}}</p>
         <a [attr.href]="endpoint.url" target="_blank" class="secondary-content" title="Ir para URL"><i class="material-icons">insert_link</i></a>
     </li>
 </ul>

@@ -21,11 +21,13 @@ export class ListComponent implements OnInit {
     filteredEndpoints(): Website[]{
         let filtered: Website[] = this.endpoints;
 
-        if(this.filter != ApiStatusEnum.Todos)
+        if(this.filter != ApiStatusEnum.Todos) {
             filtered = filtered.filter(api => api.status == (this.filter == ApiStatusEnum.Online) ? true : (this.filter == ApiStatusEnum.Offline) ? false : null);
+        }
         
-        if(this.search)
+        if(this.search) {
             filtered = filtered.filter(api => api.name.toLowerCase().includes(this.search.toLowerCase()));
+        }
 
         return filtered;
     }

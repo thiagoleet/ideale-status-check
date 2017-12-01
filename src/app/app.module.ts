@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HttpClient } from "./helpers/httpclient";
+import { HttpClientHelper } from "./helpers/httpclient";
 import { PanelModule } from "./components/panel/panel.module";
 import { ListModule } from "./components/list/list.module";
 import { MaterializeModule } from "angular2-materialize";
@@ -24,7 +24,7 @@ import { WebsiteManager } from "app/manager/website-manager";
     ListModule,
     MaterializeModule
   ],
-  providers: [HttpClient, WebsiteManager],
+  providers: [HttpClientHelper, WebsiteManager],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

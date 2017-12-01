@@ -4,11 +4,14 @@ export class Website{
     status: boolean;
     startRequest: Date;
     endRequest: Date;
+    statusText: string;
+    statusCode: number = 0;
 
     constructor(name: string, url: string){
         this.url = url;
         this.name = name;
         this.status = null;
+        this.statusText = null;
     }
 
 
