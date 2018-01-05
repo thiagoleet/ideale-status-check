@@ -18,21 +18,31 @@ export class ListComponent implements OnInit {
 
     ngOnInit() { }
 
-    filteredEndpoints(): Website[]{
+    filteredEndpoints(): Website[] {
         let filtered: Website[] = this.endpoints;
 
-        if(this.filter != ApiStatusEnum.Todos) {
-            filtered = filtered.filter(api => api.status == (this.filter == ApiStatusEnum.Online) ? true : (this.filter == ApiStatusEnum.Offline) ? false : null);
+        if (this.filter != ApiStatusEnum.Todos) {
+            let status: boolean;
+            if (this.filter == ApiStatusEnum.Online) {
+                status = true;
+            }
+            else if (this.filter == ApiStatusEnum.Offline) {
+                status = false;
+            }
+            else {
+                status = null;
+            }
+            filtered = filtered.filter(api => api.status == status);
         }
-        
-        if(this.search) {
+
+        if (this.search) {
             filtered = filtered.filter(api => api.name.toLowerCase().includes(this.search.toLowerCase()));
         }
 
         return filtered;
     }
 
-    getLength(): number{
+    getLength(): number {
         return this.filteredEndpoints().length;
     }
 }
