@@ -1,15 +1,22 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
   <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="#">Features</a>
-    <a class="p-2 text-dark" href="#">Enterprise</a>
-    <a class="p-2 text-dark" href="#">Support</a>
-    <a class="p-2 text-dark" href="#">Pricing</a>
-  </nav>
-  <a class="btn btn-outline-primary" href="#">Sign up</a>
 </div>
 
 <div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4" *ngFor="let group of groups; let i=index">
+      <h5 class="card-header">{{ group.environment.label }} {{ group.type.label }} </h5>
+      <div class="card-body">
+        <p>totalApis: {{ myBusiness.totalApis(group.apis) }}</p>
+        <p>liveApis: {{ myBusiness.liveApis(group.apis) }}</p>
+        <p>deadApis: {{ myBusiness.deadApis(group.apis) }}</p>
+        <p>waitingApis: {{ myBusiness.waitingApis(group.apis) }}</p>
+        <p>calcHealth: {{ myBusiness.calcHealth(group.apis) }}</p>
+        <p>getHealth: {{ myBusiness.getHealth(group.apis) }}</p>
+      </div>
+    </div>
+  </div>
+
   <ul class="list-group">
 
     <li *ngFor="let api of apis; let i=index" class="list-group-item d-flex justify-content-between align-items-center">

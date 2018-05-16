@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import 'rxjs/Rx';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RequestedAPIService } from './domains/requested-api/requested-api.service';
+import { RequestedAPIService } from './services/requested-api/requested-api.service';
+import { RequestedAPIBusiness } from './domains/requested-api/business/requested-api.business';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { RequestedAPIService } from './domains/requested-api/requested-api.servi
     HttpClientModule,
   ],
   providers: [
-    RequestedAPIService
+    RequestedAPIService,
+    RequestedAPIBusiness
   ],
   bootstrap: [AppComponent]
 })

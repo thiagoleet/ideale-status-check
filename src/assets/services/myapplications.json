@@ -440,5 +440,83 @@
             "type": "adm",
             "label": "Admin"
         }
+    },
+    {
+        "name": "api-dev-authenticate.prd",
+        "url": "https://api-dev-authenticate.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-dev",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "dev",
+            "label": "Developer"
+        }
+    },
+    {
+        "name": "api-dev-brand.prd",
+        "url": "https://api-dev-brand.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-dev",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "dev",
+            "label": "Developer"
+        }
+    },
+    {
+        "name": "api-dev-category.prd",
+        "url": "https://api-dev-category.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-dev",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "dev",
+            "label": "Developer"
+        }
+    },
+    {
+        "name": "api-dev-order.prd",
+        "url": "https://api-dev-order.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-dev",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "dev",
+            "label": "Developer"
+        }
+    },
+    {
+        "name": "api-dev-product.prd",
+        "url": "https://api-dev-product.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-dev",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "dev",
+            "label": "Developer"
+        }
+    },
+    {
+        "name": "api-dev-variation.prd",
+        "url": "https://api-dev-variation.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-dev",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "dev",
+            "label": "Developer"
+        }
     }
 ]
