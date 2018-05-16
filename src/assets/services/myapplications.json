@@ -1,0 +1,444 @@
+[
+    {
+        "name": "api-adm-administrator.prd",
+        "url": "https://api-adm-administrator.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-autcomstore.prd",
+        "url": "https://api-adm-autcomstore.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-authenticate.prd",
+        "url": "https://api-adm-authenticate.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-banner.prd",
+        "url": "https://api-adm-banner.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-branch.prd",
+        "url": "https://api-adm-branch.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-brand.prd",
+        "url": "https://api-adm-brand.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-budget.prd",
+        "url": "https://api-adm-budget.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-cartshowcase.prd",
+        "url": "https://api-adm-cartshowcase.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-category.prd",
+        "url": "https://api-adm-category.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-contact.prd",
+        "url": "https://api-adm-contact.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-coupon.prd",
+        "url": "https://api-adm-coupon.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-customemail.prd",
+        "url": "https://api-adm-customemail.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-customer.prd",
+        "url": "https://api-adm-customer.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-custompaint.prd",
+        "url": "https://api-adm-custompaint.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-customproduct.prd",
+        "url": "https://api-adm-customproduct.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-dashboard.prd",
+        "url": "https://api-adm-dashboard.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-dneaddress.prd",
+        "url": "https://api-adm-dneaddress.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-google.prd",
+        "url": "https://api-adm-google.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-group.prd",
+        "url": "https://api-adm-group.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-institutional.prd",
+        "url": "https://api-adm-institutional.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-intelipost.prd",
+        "url": "https://api-adm-intelipost.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-order.prd",
+        "url": "https://api-adm-order.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-paymentsgateway.prd",
+        "url": "https://api-adm-paymentsgateway.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-popup.prd",
+        "url": "https://api-adm-popup.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-product.prd",
+        "url": "https://api-adm-product.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-productrating.prd",
+        "url": "https://api-adm-productrating.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-productsawaited.prd",
+        "url": "https://api-adm-productsawaited.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-redirect301.prd",
+        "url": "https://api-adm-redirect301.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-relatedproducts.prd",
+        "url": "https://api-adm-relatedproducts.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-service.prd",
+        "url": "https://api-adm-service.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-showcase.prd",
+        "url": "https://api-adm-showcase.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-showcasegroups.prd",
+        "url": "https://api-adm-showcasegroups.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-store.prd",
+        "url": "https://api-adm-store.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    },
+    {
+        "name": "api-adm-variation.prd",
+        "url": "https://api-adm-variation.prd.idealeware.com.br/docs/index.html",
+        "groupId": "production-adm",
+        "environment": {
+            "type": "production",
+            "label": "Production"
+        },
+        "type": {
+            "type": "adm",
+            "label": "Admin"
+        }
+    }
+]

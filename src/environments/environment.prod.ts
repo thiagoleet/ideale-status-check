@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  MY_APPS: 'assets/services/myapplications.json'
 };

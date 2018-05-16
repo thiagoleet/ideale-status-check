@@ -1,50 +1,20 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="#">Features</a>
+    <a class="p-2 text-dark" href="#">Enterprise</a>
+    <a class="p-2 text-dark" href="#">Support</a>
+    <a class="p-2 text-dark" href="#">Pricing</a>
+  </nav>
+  <a class="btn btn-outline-primary" href="#">Sign up</a>
+</div>
+
 <div class="container">
-  
-  <div class="row">
-    <div class="col m3 s12">
-      <div class="col m12 s12" *ngFor="let enviroment of enviroments">
-        <panel-status [endpoints]="enviroment.websites" [title]="enviroment.name"></panel-status>
-      </div>
-    </div>
+  <ul class="list-group">
 
-    <div class="col m9 s12">
-      <div class="row row-filter">
-          <div class="input-field col s6">
-              <input id="search" [(ngModel)]="search" type="text" placeholder="Informe o nome ou URL da API">
-              <label for="search">Filtrar</label>
-          </div>
-          <div class="input-field col s6">
-              <select [(ngModel)]="filter" materialize="material_select">
-                  <option [value]="" disabled selected>Escolha uma opção</option>
-                  <option [value]="0">Todos</option>
-                  <option [value]="1">Online</option>
-                  <option [value]="2">Offline</option>
-                  <option [value]="3">Aguardando</option>
-              </select>
-              <label>Status</label>
-        </div>
-      </div>
-      <ul class="collapsible" data-collapsible="accordion">
-        <li *ngFor="let enviroment of enviroments; let i=index">
-          <div class="collapsible-header">
-            <i class="material-icons" [ngClass]="getHealthColor(enviroment.websites)">{{getHealthIcon(enviroment.websites)}}</i>
-            {{enviroment.name}}
-          </div>
-          <div class="collapsible-body">
-              <list-status [endpoints]="enviroment.websites" [title]="enviroment.name" [search]="search" [filter]="filter"></list-status>
-          </div>
-        </li>
-        
-      </ul>
-    </div>
-  </div>
+    <li *ngFor="let api of apis; let i=index" class="list-group-item d-flex justify-content-between align-items-center">
+      {{ api.name }}
+      <span class="badge badge-pill" [ngClass]="getStatusClass(api)">{{ getStatus(api) }}</span>
+    </li>
+  </ul>
 </div>
-
-<div class="fixed-action-btn">
-  <a class="btn-floating btn-large blue pulse" (click)="reload($event)">
-    <i class="large material-icons">loop</i>
-  </a>
-</div>
-
-
-
