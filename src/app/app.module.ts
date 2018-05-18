@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import 'rxjs/Rx';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RequestedAPIService } from './services/requested-api/requested-api.service';
 import { RequestedAPIBusiness } from './domains/requested-api/business/requested-api.business';
+import { RequestedAPIService } from './domains/requested-api/services/requested-api.service';
 
 
 @NgModule({

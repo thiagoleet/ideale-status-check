@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RequestedAPIService } from './services/requested-api/requested-api.service';
-import { RequestedAPI } from './services/requested-api/requested-api';
 import { RequestedAPIBusiness } from './domains/requested-api/business/requested-api.business';
-import { GroupAPI } from './services/requested-api/group-api.';
+import { RequestedAPI } from './domains/requested-api/models/requested-api';
+import { GroupAPI } from './domains/requested-api/models/group-api.';
+import { RequestedAPIService } from './domains/requested-api/services/requested-api.service';
 
 @Component({
   selector: 'app-root',
@@ -21,8 +21,14 @@ export class AppComponent implements OnInit {
       .then(apis => {
         this.apis = apis;
         let groupIds = this.getGroupIds();
-        this.groups = this.getGroups(groupIds);
-        console.log(this.groups);
+        let groups = this.getGroups(groupIds);
+        return groups;
+      })
+      .then(groups => {
+        this.groups = groups;
+        this.groups.forEach(group => {
+          this.check(group.apis);
+        });
       })
       .catch(error => {
         console.error(error);
@@ -49,11 +55,11 @@ export class AppComponent implements OnInit {
 
   getStatusClass(api: RequestedAPI): string {
     if (api.status == null) {
-      return 'badge-secondary';
+      return 'bg-light';
     } else if (api.status) {
-      return 'badge-success'
+      return 'bg-success'
     } else {
-      return 'badge-danger';
+      return 'bg-danger';
     }
   }
 

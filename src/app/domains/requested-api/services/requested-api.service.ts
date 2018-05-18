@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs/Observable";
-import { RequestedAPI } from "./requested-api";
-import { environment } from "../../../environments/environment";
+import { environment } from "../../../../environments/environment";
+import { RequestedAPI } from "../models/requested-api";
 
 @Injectable()
 export class RequestedAPIService {
