@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { RequestedAPI } from "../models/requested-api";
+import { Injectable } from '@angular/core';
+import { RequestedAPI } from '../models/requested-api';
 
 @Injectable()
 export class RequestedAPIBusiness {
@@ -8,11 +8,11 @@ export class RequestedAPIBusiness {
     }
 
     liveApis(apis: RequestedAPI[]): number {
-        return apis.filter(a => a.status == true).length;
+        return apis.filter(a => a.status === true).length;
     }
 
     deadApis(apis: RequestedAPI[]): number {
-        return apis.filter(a => a.status == false).length;
+        return apis.filter(a => a.status === false).length;
     }
 
     waitingApis(apis: RequestedAPI[]): number {
@@ -20,24 +20,24 @@ export class RequestedAPIBusiness {
     }
 
     calcHealth(apis: RequestedAPI[]): number {
-        let total = this.totalApis(apis);
-        let live = this.liveApis(apis);
+        const total = this.totalApis(apis);
+        const live = this.liveApis(apis);
         return this.calcPercentage(live, total);
     }
 
     getHealth(apis: RequestedAPI[]): string {
         return `${this.calcHealth(apis).toFixed(1)}%`;
     }
-    
+
     getWaiting(apis: RequestedAPI[]): string {
-        let total = this.totalApis(apis);
-        let waiting = this.waitingApis(apis);
+        const total = this.totalApis(apis);
+        const waiting = this.waitingApis(apis);
         return this.getPercentage(waiting, total);
     }
 
     getDead(apis: RequestedAPI[]): string {
-        let total = this.totalApis(apis);
-        let dead = this.deadApis(apis);
+        const total = this.totalApis(apis);
+        const dead = this.deadApis(apis);
         return this.getPercentage(dead, total);
     }
 
@@ -46,7 +46,7 @@ export class RequestedAPIBusiness {
     }
 
     getPercentage(list: number, total: number): string {
-        let percent = this.calcPercentage(list, total);
+        const percent = this.calcPercentage(list, total);
         return `${percent.toFixed(1)}%`;
     }
 

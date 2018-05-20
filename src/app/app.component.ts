@@ -3,6 +3,7 @@ import { RequestedAPIBusiness } from './domains/requested-api/business/requested
 import { RequestedAPI } from './domains/requested-api/models/requested-api';
 import { GroupAPI } from './domains/requested-api/models/group-api.';
 import { RequestedAPIService } from './domains/requested-api/services/requested-api.service';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +21,8 @@ export class AppComponent implements OnInit {
     this.getAll()
       .then(apis => {
         this.apis = apis;
-        let groupIds = this.getGroupIds();
-        let groups = this.getGroups(groupIds);
+        const groupIds = this.getGroupIds();
+        const groups = this.getGroups(groupIds);
         return groups;
       })
       .then(groups => {
@@ -32,7 +33,7 @@ export class AppComponent implements OnInit {
       })
       .catch(error => {
         console.error(error);
-      })
+      });
   }
 
   check(apis: RequestedAPI[]): void {
@@ -47,7 +48,7 @@ export class AppComponent implements OnInit {
     if (api.status == null) {
       return 'Processing';
     } else if (api.status) {
-      return 'OK'
+      return 'OK';
     } else {
       return 'FAIL';
     }
@@ -57,7 +58,7 @@ export class AppComponent implements OnInit {
     if (api.status == null) {
       return 'bg-light';
     } else if (api.status) {
-      return 'bg-success'
+      return 'bg-success';
     } else {
       return 'bg-danger';
     }
@@ -76,16 +77,29 @@ export class AppComponent implements OnInit {
   }
 
   private getGroupIds(): string[] {
-    return this.apis.map(e =>  e['groupId']).filter((e, i, a) => i === a.indexOf(e));
+    return this.apis.map(e => e['groupId']).filter((e, i, a) => i === a.indexOf(e));
   }
 
   private getGroups(groupIds: string[]): GroupAPI[] {
-    let groups: GroupAPI[] = [];
+    const groups: GroupAPI[] = [];
     groupIds.forEach(id => {
-      let list = this.apis.filter(api => api.groupId === id);
-      let group = new GroupAPI(list);
+      const list = this.apis.filter(api => api.groupId === id);
+      const group = new GroupAPI(list);
       groups.push(group);
     });
     return groups;
+  }
+
+  getChart(group: GroupAPI): Chart {
+    const chart = new Chart('canvas', {
+      type: 'doughnut',
+      data: {
+        labels: ['Waiting', 'Online', 'Offline'],
+        datasets: [{
+          data: [this.myBusiness.waitingApis(group.apis), this.myBusiness.liveApis(group.apis), this.myBusiness.deadApis(group.apis)]
+        }]
+      }
+    });
+    return chart;
   }
 }
