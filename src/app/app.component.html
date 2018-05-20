@@ -30,7 +30,7 @@
 
       <div [attr.id]="'collapse' + group.groupId" class="collapse" [attr.aria-labelledby]="'headingOne' + group.groupId" data-parent="#accordionGroups">
         <div class="card-body">
-            <!-- <canvas [attr.id]="'canvas_' + group.groupId">{{ getChart(group) }}</canvas> -->
+            <!-- <canvas *ngIf="group.apis.length > 0" [attr.id]="'canvas_' + group.groupId">{{ group.chart }}</canvas> -->
         </div>
       </div>
     </div>

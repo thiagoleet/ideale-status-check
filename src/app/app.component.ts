@@ -90,16 +90,19 @@ export class AppComponent implements OnInit {
     return groups;
   }
 
-  getChart(group: GroupAPI): Chart {
-    const chart = new Chart('canvas', {
-      type: 'doughnut',
-      data: {
-        labels: ['Waiting', 'Online', 'Offline'],
-        datasets: [{
-          data: [this.myBusiness.waitingApis(group.apis), this.myBusiness.liveApis(group.apis), this.myBusiness.deadApis(group.apis)]
-        }]
-      }
-    });
-    return chart;
-  }
+  // getChart(group: GroupAPI): Chart {
+  //   const ctx = document.querySelector(`#canvas_${group.groupId}`).getContext('2d');
+  //   const config = {
+  //     type: 'doughnut',
+  //     data: {
+  //       labels: ['Waiting', 'Online', 'Offline'],
+  //       datasets: [{
+  //         data: [this.myBusiness.waitingApis(group.apis), this.myBusiness.liveApis(group.apis), this.myBusiness.deadApis(group.apis)]
+  //       }]
+  //     }
+  //   };
+  //   const chart = new Chart(ctx, config);
+  //   console.log(chart);
+  //   return chart;
+  // }
 }
