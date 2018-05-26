@@ -23,8 +23,8 @@ export class AppComponent implements OnInit {
     this.getAll()
       .then(apis => {
         this.apis = apis;
-        let groupIds = this.getGroupIds();
-        let groups = this.getGroups(groupIds);
+        const groupIds = this.getGroupIds();
+        const groups = this.getGroups(groupIds);
         return groups;
       })
       .then(groups => {
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
       })
       .catch(error => {
         console.error(error);
-      })
+      });
   }
 
   selectGroup(event: any, group: GroupAPI): void {
@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
     if (api.status == null) {
       return 'Processing';
     } else if (api.status) {
-      return 'OK'
+      return 'OK';
     } else {
       return 'FAIL';
     }
@@ -118,12 +118,28 @@ export class AppComponent implements OnInit {
   }
 
   private getGroups(groupIds: string[]): GroupAPI[] {
-    let groups: GroupAPI[] = [];
+    const groups: GroupAPI[] = [];
     groupIds.forEach(id => {
-      let list = this.apis.filter(api => api.groupId === id);
-      let group = new GroupAPI(list);
+      const list = this.apis.filter(api => api.groupId === id);
+      const group = new GroupAPI(list);
       groups.push(group);
     });
     return groups;
   }
+
+  // getChart(group: GroupAPI): Chart {
+  //   const ctx = document.querySelector(`#canvas_${group.groupId}`).getContext('2d');
+  //   const config = {
+  //     type: 'doughnut',
+  //     data: {
+  //       labels: ['Waiting', 'Online', 'Offline'],
+  //       datasets: [{
+  //         data: [this.myBusiness.waitingApis(group.apis), this.myBusiness.liveApis(group.apis), this.myBusiness.deadApis(group.apis)]
+  //       }]
+  //     }
+  //   };
+  //   const chart = new Chart(ctx, config);
+  //   console.log(chart);
+  //   return chart;
+  // }
 }
