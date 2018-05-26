@@ -41,6 +41,12 @@ export class RequestedAPIBusiness {
         return this.getPercentage(dead, total);
     }
 
+    getLive(apis: RequestedAPI[]): string {
+        let total = this.totalApis(apis);
+        let alive = this.liveApis(apis);
+        return this.getPercentage(alive, total);
+    }
+
     calcPercentage(list: number, total: number): number {
         return (list / total) * 100;
     }

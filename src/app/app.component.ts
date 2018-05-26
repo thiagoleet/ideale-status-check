@@ -3,6 +3,7 @@ import { RequestedAPIBusiness } from './domains/requested-api/business/requested
 import { RequestedAPI } from './domains/requested-api/models/requested-api';
 import { GroupAPI } from './domains/requested-api/models/group-api.';
 import { RequestedAPIService } from './domains/requested-api/services/requested-api.service';
+import fontawesome from '@fortawesome/fontawesome';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,8 @@ export class AppComponent implements OnInit {
   title = 'app';
   apis: RequestedAPI[] = [];
   groups: GroupAPI[] = [];
+  group: GroupAPI = null;
+  chart = [];
 
   constructor(private myService: RequestedAPIService, private myBusiness: RequestedAPIBusiness) { }
 
@@ -29,10 +32,33 @@ export class AppComponent implements OnInit {
         this.groups.forEach(group => {
           this.check(group.apis);
         });
+
+
       })
       .catch(error => {
         console.error(error);
       })
+  }
+
+  selectGroup(event: any, group: GroupAPI): void {
+    if (event) {
+      event.preventDefault();
+    }
+    this.group = group;
+  }
+
+  selectedGroup(): GroupAPI {
+    return this.group || new GroupAPI(this.apis);
+  }
+
+  environmentTitle(): string {
+    return (this.group) ? `${this.group.environment.label} ${this.group.type.label}` : 'All environments';
+  }
+
+  allApis(): RequestedAPI[] {
+    let apis: RequestedAPI[] = [];
+    this.groups.forEach(group => apis.push(...group.apis));
+    return apis;
   }
 
   check(apis: RequestedAPI[]): void {
@@ -53,13 +79,25 @@ export class AppComponent implements OnInit {
     }
   }
 
-  getStatusClass(api: RequestedAPI): string {
-    if (api.status == null) {
-      return 'bg-light';
-    } else if (api.status) {
-      return 'bg-success'
+  getHealthBadge(percentage: number): string {
+    if (!percentage) {
+      return 'badge-secondary';
+    } else if (percentage == 100) {
+      return 'badge-success';
+    } else if (percentage > 100 && percentage < 70) {
+      return 'badge-warning';
     } else {
-      return 'bg-danger';
+      return 'badge-danger';
+    }
+  }
+
+  getStatusClass(api: RequestedAPI): string {
+    if (!api || api.status == null) {
+      return 'badge-secondary';
+    } else if (api.status) {
+      return 'badge-success'
+    } else {
+      return 'badge-danger';
     }
   }
 
@@ -76,7 +114,7 @@ export class AppComponent implements OnInit {
   }
 
   private getGroupIds(): string[] {
-    return this.apis.map(e =>  e['groupId']).filter((e, i, a) => i === a.indexOf(e));
+    return this.apis.map(e => e['groupId']).filter((e, i, a) => i === a.indexOf(e));
   }
 
   private getGroups(groupIds: string[]): GroupAPI[] {

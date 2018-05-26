@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RequestedAPIBusiness } from './domains/requested-api/business/requested-api.business';
 import { RequestedAPIService } from './domains/requested-api/services/requested-api.service';
+import { ChartModule } from './components/chart/chart.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { RequestedAPIService } from './domains/requested-api/services/requested-
   imports: [
     BrowserModule,
     HttpClientModule,
+    ChartModule
   ],
   providers: [
     RequestedAPIService,
