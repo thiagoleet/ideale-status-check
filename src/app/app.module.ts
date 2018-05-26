@@ -6,7 +6,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RequestedAPIBusiness } from './domains/requested-api/business/requested-api.business';
 import { RequestedAPIService } from './domains/requested-api/services/requested-api.service';
 import { ChartModule } from './components/chart/chart.module';
-
+import { HeaderModule } from './components/header/header.module';
+import { ListModule } from './components/list/list.module';
+import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { ChartModule } from './components/chart/chart.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    ChartModule
+    ChartModule, 
+    HeaderModule,
+    ListModule,
+    environment.production ? ServiceWorkerModule.register('ngsw-worker.js') : []
   ],
   providers: [
     RequestedAPIService,

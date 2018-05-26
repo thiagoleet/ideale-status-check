@@ -14,7 +14,7 @@
     },
     {
         "name": "api-adm-autcomstore.prd",
-        "url": "https://api-adm-autcomstore.prd.idealeware.com.br/docs/index.htmlx",
+        "url": "https://api-adm-autcomstore.prd.idealeware.com.br/docs/index.html",
         "groupId": "production-adm",
         "environment": {
             "type": "production",

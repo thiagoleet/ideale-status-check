@@ -11,11 +11,9 @@ import fontawesome from '@fortawesome/fontawesome';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
   apis: RequestedAPI[] = [];
   groups: GroupAPI[] = [];
   group: GroupAPI = null;
-  chart = [];
 
   constructor(private myService: RequestedAPIService, private myBusiness: RequestedAPIBusiness) { }
 
@@ -40,10 +38,8 @@ export class AppComponent implements OnInit {
       });
   }
 
-  selectGroup(event: any, group: GroupAPI): void {
-    if (event) {
-      event.preventDefault();
-    }
+  handleGroupUpdated(group: GroupAPI): void {
+    console.log(group);
     this.group = group;
   }
 
@@ -67,38 +63,6 @@ export class AppComponent implements OnInit {
         .then(response => api.status = response)
         .catch(error => api.status = error);
     });
-  }
-
-  getStatus(api: RequestedAPI): string {
-    if (api.status == null) {
-      return 'Processing';
-    } else if (api.status) {
-      return 'OK';
-    } else {
-      return 'FAIL';
-    }
-  }
-
-  getHealthBadge(percentage: number): string {
-    if (!percentage) {
-      return 'badge-secondary';
-    } else if (percentage == 100) {
-      return 'badge-success';
-    } else if (percentage > 100 && percentage < 70) {
-      return 'badge-warning';
-    } else {
-      return 'badge-danger';
-    }
-  }
-
-  getStatusClass(api: RequestedAPI): string {
-    if (!api || api.status == null) {
-      return 'badge-secondary';
-    } else if (api.status) {
-      return 'badge-success'
-    } else {
-      return 'badge-danger';
-    }
   }
 
   private getAll(): Promise<RequestedAPI[]> {
@@ -126,20 +90,4 @@ export class AppComponent implements OnInit {
     });
     return groups;
   }
-
-  // getChart(group: GroupAPI): Chart {
-  //   const ctx = document.querySelector(`#canvas_${group.groupId}`).getContext('2d');
-  //   const config = {
-  //     type: 'doughnut',
-  //     data: {
-  //       labels: ['Waiting', 'Online', 'Offline'],
-  //       datasets: [{
-  //         data: [this.myBusiness.waitingApis(group.apis), this.myBusiness.liveApis(group.apis), this.myBusiness.deadApis(group.apis)]
-  //       }]
-  //     }
-  //   };
-  //   const chart = new Chart(ctx, config);
-  //   console.log(chart);
-  //   return chart;
-  // }
 }
