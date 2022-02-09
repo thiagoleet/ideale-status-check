@@ -1,27 +1,19 @@
-# StatusCheck
+![Thiago - Capa](https://user-images.githubusercontent.com/9437391/153274659-915c4df9-0032-4757-a9a2-6a85107c276b.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
+# Hello there!
 
-## Development server
+## Who Am I?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- 🇧🇷 I'm from Brazil
+- 👨‍💻Software Engineer, currently working with Frontend Development
+- 💡 Always learning.
+- ⚙️ Contact me on [LinkedIn](https://www.linkedin.com/in/thiagofmleite/)
+- 🚶‍♂️Follow me on [Twitter](https://twitter.com/thiagoleite), [Instagram](https://instagram.com/thiagoleet) and [Twitch](https://twitch.tv/thiagoleet).
 
-## Code scaffolding
+## My stats
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[![ThiagoLeet's GitHub stats](https://github-readme-stats.vercel.app/api?username=thiagoleet&show_icons=true&theme=radical&count_private=true)](https://github.com/anuraghazra/github-readme-stats)
 
-## Build
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=thiagoleet&theme=radical&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+---
