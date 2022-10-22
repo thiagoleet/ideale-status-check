@@ -1,0 +1,14 @@
+.site {
+  flex-direction: row;
+  display: flex;
+  margin-bottom: 0.2em;
+}
+
+.site .name {  
+  text-align: left;
+  
+}
+
+.site .status {
+  margin-right: 0.5em;
+}
